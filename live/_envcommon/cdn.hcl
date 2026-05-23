@@ -1,9 +1,9 @@
 terraform {
-  source = "${get_repo_root()}//infra/modules/cdn"
+  source = "${get_repo_root()}//modules/cdn"
 }
 
 dependency "dns" {
-  config_path = "../dns"
+  config_path = "${get_original_terragrunt_dir()}/../dns"
 
   mock_outputs_allowed_terraform_commands = ["validate", "plan"]
   mock_outputs = {
@@ -14,7 +14,7 @@ dependency "dns" {
 }
 
 dependency "storage" {
-  config_path = "../storage"
+  config_path = "${get_original_terragrunt_dir()}/../storage"
 
   mock_outputs_allowed_terraform_commands = ["validate", "plan"]
   mock_outputs = {
@@ -23,7 +23,7 @@ dependency "storage" {
 }
 
 dependency "compute" {
-  config_path = "../compute"
+  config_path = "${get_original_terragrunt_dir()}/../compute"
 
   mock_outputs_allowed_terraform_commands = ["validate", "plan"]
   mock_outputs = {

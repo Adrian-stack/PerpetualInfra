@@ -3,7 +3,7 @@ include "root" {
 }
 
 terraform {
-  source = "${get_repo_root()}//infra/modules/storage-policy"
+  source = "${get_repo_root()}//modules/storage-policy"
 }
 
 dependency "storage" {

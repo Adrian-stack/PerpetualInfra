@@ -1,5 +1,5 @@
 terraform {
-  source = "${get_repo_root()}//infra/modules/storage"
+  source = "${get_repo_root()}//modules/storage"
 }
 
 locals {

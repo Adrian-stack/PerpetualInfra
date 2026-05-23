@@ -1,9 +1,9 @@
 terraform {
-  source = "${get_repo_root()}//infra/modules/compute"
+  source = "${get_repo_root()}//modules/compute"
 }
 
 dependency "networking" {
-  config_path = "../networking"
+  config_path = "${get_original_terragrunt_dir()}/../networking"
 
   mock_outputs_allowed_terraform_commands = ["validate", "plan"]
   mock_outputs = {
@@ -14,7 +14,7 @@ dependency "networking" {
 }
 
 dependency "storage" {
-  config_path = "../storage"
+  config_path = "${get_original_terragrunt_dir()}/../storage"
 
   mock_outputs_allowed_terraform_commands = ["validate", "plan"]
   mock_outputs = {

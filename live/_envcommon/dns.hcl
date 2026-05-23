@@ -1,5 +1,5 @@
 terraform {
-  source = "${get_repo_root()}//infra/modules/dns"
+  source = "${get_repo_root()}//modules/dns"
 }
 
 # dns is a root component — no upstream dependencies.
